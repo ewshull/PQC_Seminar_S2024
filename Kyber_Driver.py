@@ -8,33 +8,41 @@ from Kyber_Decrypt import decrypt
 n = 256  # Polynomial degree
 q = 7681  # Modulus
 
-plaintext = 'lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusc'
+plaintext = 'Once upon a time there were three Bears, who lived together in a house of their own, in a wood. One of them was a Little Wee Bear, and one was a Middle-sized Bear, and the other was a Great Big Bear. They had each a bowl for their porridge; a little bowl f'
 
 # Input plaintext
+print()
 print("Plaintext Before:", plaintext)
+print()
 
 binary_polynomial_plaintext = text_to_binary_polynomial(plaintext, q)
 print("Plaintext as Binary Polynomial:", binary_polynomial_plaintext)
+print()
 
 # Generate Public & Secret Key
 secret_key, public_key = generate_keypair(n, q)
 
 # Output keys
 print("Secret Key:", secret_key)
-print("Public Key:", public_key)
+print()
 
+print("Public Key:", public_key)
+print()
 
 # Encrypt Plaintext into Ciphertext
 ciphertext = encrypt(n, q, public_key, binary_polynomial_plaintext)
 
 # Output ciphertext
 print("Ciphertext:", ciphertext)
+print()
 
 # Decrypt Ciphertext into Plaintext
-decrypted_plaintext_binary_polynomial = decrypt(n, q, secret_key, ciphertext)
+# decrypted_plaintext_binary_polynomial = decrypt(n, q, secret_key, ciphertext)
 
 # Output the decrypted plaintext
-print("Decrypted Plaintext as Binary Polynomial:", decrypted_plaintext_binary_polynomial)
+# print("Decrypted Plaintext as Binary Polynomial:", decrypted_plaintext_binary_polynomial)
+# print()
 
-decrypted_plaintext = binary_polynomial_to_text(decrypted_plaintext_binary_polynomial)
-print("Decrypted Plaintext:", decrypted_plaintext)
+# decrypted_plaintext = binary_polynomial_to_text(decrypted_plaintext_binary_polynomial)
+# print("Decrypted Plaintext:")
+# print(decrypted_plaintext)
